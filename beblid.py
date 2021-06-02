@@ -6,14 +6,14 @@ import matplotlib.pyplot as plt
 
 # Load grayscale images
 img1 = cv.imread("./datasets/light/img1.ppm", cv.IMREAD_GRAYSCALE)
-img2 = cv.imread("./datasets/light/img2.ppm", cv.IMREAD_GRAYSCALE)
+img2 = cv.imread("./datasets/light/img6.ppm", cv.IMREAD_GRAYSCALE)
 
 # Load homography (geometric transformation between image)
 
-homography=np.loadtxt("./datasets/light/H1to2p")
+homography=np.loadtxt("./datasets/light/H1to6p")
 print(f"Homography from img1 to img2:\n{homography}")
 
-detector = cv.ORB_create(100)
+detector = cv.ORB_create(10000)
 kpts1 = detector.detect(img1, None)
 kpts2 = detector.detect(img2, None)
 
